@@ -1,0 +1,3 @@
+name: orffinder_env
+dependencies:
+  - biopython
