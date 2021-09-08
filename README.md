@@ -30,7 +30,7 @@ trim_trailing: remove ORFs are the edge of the sequence that do not have a defin
 
 **getORFNucleotides()**
 ```
-Returns the loci of discovered ORFs in a dictionary format.
+Returns a list of Biopython Seq objects or loci of discovered ORFs with Biopython Seq objects in a dictionary format.
 
 sequence: sequence in Biopython Seq or String format.
 return_loci: return the loci together with the nucleotide sequences. Default: False
@@ -43,7 +43,7 @@ trim_trailing: remove ORFs are the edge of the sequence that do not have a defin
 
 **getORFProteins()**
 ```
-Returns the loci of discovered ORFs in a dictionary format.
+Returns a list of Biopython Seq objects or loci of discovered ORFs with Biopython Seq objects in a dictionary format.
 
 sequence: sequence in Biopython Seq or String format.
 translation_table: translation table as per BioPython. Default: 1

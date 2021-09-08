@@ -146,7 +146,7 @@ def getORFs (sequence, minimum_length=75, start_codons=["ATG"], stop_codons=["TA
 def getORFNucleotides (sequence, return_loci=False, **kwargs):
 
     """
-    Returns the loci of discovered ORFs in a dictionary format.
+    Returns a list of Biopython Seq objects or loci of discovered ORFs with Biopython Seq objects in a dictionary format.
 
     sequence: sequence in Biopython Seq or String format.
     return_loci: return the loci together with the nucleotide sequences. Default: False
@@ -188,7 +188,7 @@ def getORFNucleotides (sequence, return_loci=False, **kwargs):
 def getORFProteins (sequence, translation_table=1, return_loci=False, **kwargs):
 
     """
-    Returns the loci of discovered ORFs in a dictionary format.
+    Returns a list of Biopython Seq objects or loci of discovered ORFs with Biopython Seq objects in a dictionary format.
 
     sequence: sequence in Biopython Seq or String format.
     translation_table: translation table as per BioPython. Default: 1
