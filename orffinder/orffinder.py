@@ -149,8 +149,8 @@ def getORFNucleotides (sequence, return_loci=False, **kwargs):
     Returns the loci of discovered ORFs in a dictionary format.
 
     sequence: sequence in Biopython Seq or String format.
-    return_loci: return the loci together with the nucleotide sequences.
-    minimum_length: minimum size of ORF in nucleotides.
+    return_loci: return the loci together with the nucleotide sequences. Default: False
+    minimum_length: minimum size of ORF in nucleotides. Default: 75
     start_codons: recognised 3-base-pair codons for initialisation. Default: ["ATG"]
     stop_codons: recognised 3-base pair condons for termination. Default: ["TAA", "TAG", "TGA"]
     remove_nested: remove all ORFs completely encased in another. Default: False
@@ -191,8 +191,9 @@ def getORFProteins (sequence, translation_table=1, return_loci=False, **kwargs):
     Returns the loci of discovered ORFs in a dictionary format.
 
     sequence: sequence in Biopython Seq or String format.
-    return_loci: return the loci together with the protein sequences.
-    minimum_length: minimum size of ORF in nucleotides.
+    translation_table: translation table as per BioPython. Default: 1
+    return_loci: return the loci together with the protein sequences. Default: False
+    minimum_length: minimum size of ORF in nucleotides. Default: 75
     start_codons: recognised 3-base-pair codons for initialisation. Default: ["ATG"]
     stop_codons: recognised 3-base pair condons for termination. Default: ["TAA", "TAG", "TGA"]
     remove_nested: remove all ORFs completely encased in another. Default: False
