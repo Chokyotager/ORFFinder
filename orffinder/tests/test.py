@@ -3,7 +3,26 @@ from Bio.Seq import Seq
 
 import orffinder
 
-sequence = list(SeqIO.parse("gene.fasta", "fasta"))[0]
+sequence = list(SeqIO.parse("tests/gene.fasta", "fasta"))[0]
 
-out = orffinder.getORFProteins(sequence, minimum_length=75, remove_nested=True)
-print(out)
+out = orffinder.getORFProteins(sequence, return_loci=True, minimum_length=75, remove_nested=False, trim_trailing=False)
+
+for orf in out:
+
+    start = min(orf["start"], orf["end"])
+    end = max(orf["start"], orf["end"])
+    length = end - start
+
+    print(orf["sense"])
+
+    if orf["sense"] == "+":
+
+        print(sequence.seq[start - 1 : end - 1])
+
+    else:
+        print(sequence.seq[start - 1 : end - 1])
+
+    print(orf["protein"])
+    print("\n")
+
+print(len(out))
