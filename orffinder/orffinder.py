@@ -13,7 +13,6 @@ def getORFs (sequence, minimum_length=75, start_codons=["ATG"], stop_codons=["TA
 
     """
     Returns the loci of discovered ORFs in a dictionary format.
-
     sequence: sequence in Biopython Seq or String format.
     minimum_length: minimum size of ORF in nucleotides.
     start_codons: recognised 3-base-pair codons for initialisation. Default: ["ATG"]
@@ -44,7 +43,7 @@ def getORFs (sequence, minimum_length=75, start_codons=["ATG"], stop_codons=["TA
 
     sequence_length = len(sequence)
     forward = str(sequence.seq).upper()
-    reverse = str(sequence.reverse_complement().seq)[::-1].upper()
+    reverse = str(sequence.reverse_complement().seq).upper()
 
     forward_start, forward_stop = findSense(forward, "+")
     reverse_start, reverse_stop = findSense(reverse, "-")
@@ -130,13 +129,13 @@ def getORFs (sequence, minimum_length=75, start_codons=["ATG"], stop_codons=["TA
         orf["index"] = i + 1
 
         if orf["sense"] == "-":
-            orf["start"] = sequence_length - orf["start"]
+            orf["start"] = sequence_length - orf["start"] + 2
 
             if orf["end"] == -1:
                 orf["end"] = 0
 
             else:
-                orf["end"] = sequence_length - orf["end"]
+                orf["end"] = sequence_length - orf["end"] + 2
 
         elif orf["end"] == -1:
             orf["end"] = sequence_length
@@ -147,7 +146,6 @@ def getORFNucleotides (sequence, return_loci=False, **kwargs):
 
     """
     Returns a list of Biopython Seq objects or loci of discovered ORFs with Biopython Seq objects in a dictionary format.
-
     sequence: sequence in Biopython Seq or String format.
     return_loci: return the loci together with the nucleotide sequences. Default: False
     minimum_length: minimum size of ORF in nucleotides. Default: 75
@@ -163,7 +161,7 @@ def getORFNucleotides (sequence, return_loci=False, **kwargs):
 
     sequence_length = len(sequence)
     forward = str(sequence.seq).upper()
-    reverse = str(sequence.reverse_complement().seq)[::-1].upper()
+    reverse = str(sequence.reverse_complement().seq).upper()
 
     nucleotides = list()
 
@@ -173,7 +171,7 @@ def getORFNucleotides (sequence, return_loci=False, **kwargs):
             locus["nucleotide"] = Seq(forward[locus["start"] - 1 : locus["end"] - 1])
 
         else:
-            locus["nucleotide"] = Seq(reverse[sequence_length - locus["start"] - 1 : sequence_length - locus["end"] - 1])
+            locus["nucleotide"] = Seq(reverse[sequence_length - locus["start"] + 1 : sequence_length - locus["end"] + 1])
 
         nucleotides.append(locus["nucleotide"])
 
@@ -189,7 +187,6 @@ def getORFProteins (sequence, translation_table=1, return_loci=False, **kwargs):
 
     """
     Returns a list of Biopython Seq objects or loci of discovered ORFs with Biopython Seq objects in a dictionary format.
-
     sequence: sequence in Biopython Seq or String format.
     translation_table: translation table as per BioPython. Default: 1
     return_loci: return the loci together with the protein sequences. Default: False
@@ -206,7 +203,7 @@ def getORFProteins (sequence, translation_table=1, return_loci=False, **kwargs):
 
     sequence_length = len(sequence)
     forward = str(sequence.seq).upper()
-    reverse = str(sequence.reverse_complement().seq)[::-1].upper()
+    reverse = str(sequence.reverse_complement().seq).upper()
 
     proteins = list()
 
