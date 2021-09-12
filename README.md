@@ -7,6 +7,10 @@ ORFFinder in Python. Inspired by NCBI's version: https://www.ncbi.nlm.nih.gov/or
 ### Usage
 Import the package
 
+**IMPORTANT: Your DNA/RNA strand should always be from the 5' to 3' direction when input!**
+![Transcription direction](https://cdn.kastatic.org/ka-perseus-images/1da89713b9aa8067742244d916749e72561bb3cc.png)
+(Image credit: Khan Academy)
+
 ```py
 from Bio import SeqIO
 import orffinder
