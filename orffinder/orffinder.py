@@ -215,7 +215,7 @@ def getORFProteins (sequence, translation_table=1, return_loci=False, **kwargs):
             locus["protein"] = Seq(forward[locus["start"] - 1 : locus["end"] - 1 - difference]).translate()
 
         else:
-            locus["protein"] = Seq(reverse[sequence_length - locus["start"] - 1 : sequence_length - locus["end"] - 1  - difference]).translate()
+            locus["protein"] = Seq(reverse[sequence_length - locus["start"] + 1 : sequence_length - locus["end"] + 1  - difference]).translate()
 
         proteins.append(locus["protein"])
 
