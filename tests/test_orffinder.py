@@ -1,6 +1,7 @@
 from Bio import SeqIO
 from Bio.Seq import Seq
 
+from unittest import TestCase
 import orffinder
 
 sequence = list(SeqIO.parse("tests/gene.fasta", "fasta"))[0]
