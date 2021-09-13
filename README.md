@@ -1,7 +1,7 @@
 <div align="center">
   <br />
   <p>
-    <a href="https://github.com/Chokyotager/ORFFinder"><img src="/images/ORFFinder.png" alt="banner" /></a>
+    <a href="https://github.com/Chokyotager/ORFFinder"><img src="https://github.com/Chokyotager/ORFFinder/blob/main/images/ORFFinder.png?raw=true" alt="banner" /></a>
   </p>
   <br />
   <p>
