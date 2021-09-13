@@ -6,6 +6,8 @@
   <br />
 </div>
 
+[![Downloads](https://pepy.tech/badge/orffinder)](https://pepy.tech/project/orffinder)
+
 # ORFFinder
 ORFFinder in Python. Inspired by NCBI's version: https://www.ncbi.nlm.nih.gov/orffinder/
 
