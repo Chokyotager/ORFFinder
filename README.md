@@ -4,9 +4,10 @@
     <a href="https://github.com/Chokyotager/ORFFinder"><img src="/images/ORFFinder.png" alt="banner" /></a>
   </p>
   <br />
+  <p>
+    <a href="https://pepy.tech/project/orffinder"><img src="https://pepy.tech/badge/orffinder" alt="Downloads" /></a>
+  </p>
 </div>
-
-[![Downloads](https://pepy.tech/badge/orffinder)](https://pepy.tech/project/orffinder)
 
 # ORFFinder
 ORFFinder in Python. Inspired by NCBI's version: https://www.ncbi.nlm.nih.gov/orffinder/
@@ -25,7 +26,7 @@ Import the package
 
 ```py
 from Bio import SeqIO
-import orffinder
+from orffinder import orffinder
 
 sequence = SeqIO.read("gene.fasta", "fasta")
 orffinder.getORFs(sequence, minimum_length=75, remove_nested=True)
