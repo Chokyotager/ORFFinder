@@ -23,8 +23,12 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ),
     install_requires=[
-        "biopython=1.79"
-    ]
+        "biopython==1.79"
+    ],
+    scripts=[
+        "src/cline_tools/orffinder-to-gtf",
+        "src/cline_tools/orffinder-to-sequence"
+    ],
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
     python_requires=">=3.6"
