@@ -9,6 +9,8 @@
 # ORFFinder
 ORFFinder in Python. Inspired by NCBI's version: https://www.ncbi.nlm.nih.gov/orffinder/
 
+Finds the open reading frame (6-frame scan) on a given 5' to 3' nucleotide.
+
 ### Installation:
 `pip3 install orffinder`
 
