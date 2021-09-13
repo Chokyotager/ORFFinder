@@ -17,7 +17,12 @@ Finds the open reading frame (6-frame scan) on a given 5' to 3' nucleotide.
 ### Installation:
 `pip3 install orffinder`
 
-### Usage
+### Terminal Usage
+Two command-line executable commands are available: `orffinder-to-gtf` `orffinder-to-sequence`.
+
+Documentation for these commands can be retrieved by specifying `<command> -h`.
+
+### API Usage
 Import the package
 
 **IMPORTANT: Your DNA/RNA strand should always be from the 5' to 3' direction when input!**
