@@ -1,8 +1,9 @@
 import sys
+import os
 from Bio import SeqIO
 from orffinder import orffinder
 
-arguments = sys.argv
+arguments = sys.argv + [""]
 classed_arguments = {"orf_size": "75", "max_orfs_per_sequence": "-1", "remove_nested": "False", "trim_trailing": "False", "infmt": "fasta", "attr_name": "ORF_"}
 
 try:
@@ -13,6 +14,11 @@ try:
         if argument.startswith("-"):
 
             classed_arguments[argument[1:]] = arguments[i + 1]
+
+    if "h" in classed_arguments.keys():
+        help_output = open("help_pages/orffinder-to-gtf.txt", "r").read()
+        print(help_output)
+        os._exit(1)
 
     sequences = SeqIO.parse(classed_arguments["in"], classed_arguments["infmt"])
 

@@ -1,0 +1,66 @@
+import sys
+import os
+from Bio import SeqIO
+from Bio.SeqRecord import SeqRecord
+from orffinder import orffinder
+
+arguments = sys.argv + [""]
+classed_arguments = {"orf_size": "75", "outtype": "nucleotide", "max_orfs_per_sequence": "-1", "remove_nested": "False", "trim_trailing": "False", "infmt": "fasta", "attr_name": "ORF_", "outfmt": "fasta"}
+
+try:
+    for i in range(len(arguments)):
+
+        argument = arguments[i]
+
+        if argument.startswith("-"):
+
+            classed_arguments[argument[1:]] = arguments[i + 1]
+
+    if "h" in classed_arguments.keys():
+        help_output = open("help_pages/orffinder-to-sequence.txt", "r").read()
+        print(help_output)
+        os._exit(1)
+
+    sequences = SeqIO.parse(classed_arguments["in"], classed_arguments["infmt"])
+
+    orf_size = int(classed_arguments["orf_size"])
+    remove_nested = classed_arguments["remove_nested"] == "True"
+    trim_trailing = classed_arguments["trim_trailing"] == "True"
+    attr_name = classed_arguments["attr_name"]
+    max_orfs_per_sequence = int(classed_arguments["max_orfs_per_sequence"])
+
+    output = list()
+
+    for sequence in sequences:
+
+        seqname = sequence.description
+
+        if classed_arguments["outtype"] == "nucleotide":
+            output_seqs = orffinder.getORFNucleotides(sequence, minimum_length=orf_size, trim_trailing=trim_trailing, remove_nested=remove_nested)
+
+        else:
+            output_seqs = orffinder.getORFProteins(sequence, minimum_length=orf_size, trim_trailing=trim_trailing, remove_nested=remove_nested)
+
+        output += output_seqs
+
+    index = int()
+
+    new_output = list()
+
+    for i in range(len(output)):
+
+        #print(Seq(str(output_seq)))
+        index = i + 1
+        output[i] = SeqRecord(seq=output[i], id=classed_arguments["attr_name"] + str(index), description="")
+
+
+    if "out" not in classed_arguments.keys():
+
+        SeqIO.write(output, sys.stdout, classed_arguments["outfmt"])
+
+    else:
+
+        SeqIO.write(output, classed_arguments["out"], classed_arguments["outfmt"])
+
+except:
+    print("USAGE\n  orffinder-to-sequence [-in input] [-infmt format] [-out output] [-outfmt format] [-orf_size int]\n    [-remove_nested boolean] [-trim_trailing boolean] [-max_orfs_per_sequence int]\n    [-attr_name string] [-outtype protein/nucleotide]\n\nDESCRIPTION\n  ORFFinder Python v1.5\n\nUse '-help' to print detailed descriptions of command line arguments\n========================================================================")
