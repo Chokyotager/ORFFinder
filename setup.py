@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="orffinder",
-    version="1.2",
+    version="1.3",
     author="ChocoParrot",
     author_email="lachocoparrot@gmail.com",
     description="ORFFinder API.",
@@ -22,7 +22,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ),
-    package_dir={"": "src"},
-    packages=setuptools.find_packages(where="src"),
+    package_dir={"": "src/orffinder"},
+    packages=setuptools.find_packages(where="src/orffinder"),
     python_requires=">=3.6"
 )
