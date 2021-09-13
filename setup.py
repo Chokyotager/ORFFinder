@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="orffinder",
-    version="1.3",
+    version="1.4",
     author="ChocoParrot",
     author_email="lachocoparrot@gmail.com",
     description="ORFFinder API.",
