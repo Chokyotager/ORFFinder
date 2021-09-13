@@ -1,3 +1,11 @@
+<div align="center">
+  <br />
+  <p>
+    <a href="https://github.com/Chokyotager/ORFFinder"><img src="/images/ORFFinder.png" alt="banner" /></a>
+  </p>
+  <br />
+</div>
+
 # ORFFinder
 ORFFinder in Python. Inspired by NCBI's version: https://www.ncbi.nlm.nih.gov/orffinder/
 
@@ -58,3 +66,6 @@ stop_codons: recognised 3-base pair condons for termination. Default: ["TAA", "T
 remove_nested: remove all ORFs completely encased in another. Default: False
 trim_trailing: remove ORFs are the edge of the sequence that do not have a defined stop codon. Default: False
 ```
+
+### Dependencies
+Biopython (https://biopython.org/)
