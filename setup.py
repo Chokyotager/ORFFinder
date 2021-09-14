@@ -27,7 +27,8 @@ setuptools.setup(
     ],
     scripts=[
         "src/cline_tools/orffinder-to-gtf",
-        "src/cline_tools/orffinder-to-sequence"
+        "src/cline_tools/orffinder-to-sequence",
+        "src/cline_tools/orffinder-to-gff3"
     ],
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
