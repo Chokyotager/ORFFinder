@@ -10,7 +10,7 @@ setuptools.setup(
     version="1.5",
     author="ChocoParrot",
     author_email="lachocoparrot@gmail.com",
-    description="ORFFinder API.",
+    description="Open Reading Frame finder natively coded in Python.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Chokyotager/ORFFinder",
