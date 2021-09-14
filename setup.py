@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="orffinder",
-    version="1.4",
+    version="1.5",
     author="ChocoParrot",
     author_email="lachocoparrot@gmail.com",
     description="ORFFinder API.",
@@ -23,7 +23,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ),
     install_requires=[
-        "biopython==1.79"
+        "biopython>=1.79"
     ],
     scripts=[
         "src/cline_tools/orffinder-to-gtf",
