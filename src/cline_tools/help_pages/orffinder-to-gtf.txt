@@ -4,7 +4,7 @@ USAGE
       [-attr_name string]
 
 DESCRIPTION
-      ORFFinder Python v1.7
+      ORFFinder Python v1.8
 
 PARAMETERS
 [-h]

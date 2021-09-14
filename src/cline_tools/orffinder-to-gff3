@@ -43,7 +43,11 @@ try:
 
             index += 1
             local_index += 1
-            output.append([seqname, "ORFFinder Python", "ORF", str(orf["start"]), str(orf["end"]), ".", orf["sense"], str(orf["frame"] - 1), "orf_id=" + attr_name + str(index) + ";"])
+
+            start = min(orf["start"], orf["end"])
+            end = max(orf["start"], orf["end"])
+
+            output.append([seqname, "ORFFinder Python", "ORF", str(start), str(end), ".", orf["sense"], str(orf["frame"] - 1), "orf_id=" + attr_name + str(index) + ";"])
 
             if local_index >= max_orfs_per_sequence and max_orfs_per_sequence != -1:
                 break
@@ -60,4 +64,4 @@ try:
         open(classed_arguments["out"], "w+").write(full_output)
 
 except:
-    print("USAGE\n  orffinder-to-gff3 [-in input] [-infmt format] [-out output] [-orf_size int]\n    [-remove_nested boolean] [-trim_trailing boolean] [-max_orfs_per_sequence int]\n    [-attr_name string]\n\nDESCRIPTION\n  ORFFinder Python v1.7\n\nUse '-help' to print detailed descriptions of command line arguments\n========================================================================")
+    print("USAGE\n  orffinder-to-gff3 [-in input] [-infmt format] [-out output] [-orf_size int]\n    [-remove_nested boolean] [-trim_trailing boolean] [-max_orfs_per_sequence int]\n    [-attr_name string]\n\nDESCRIPTION\n  ORFFinder Python v1.8\n\nUse '-help' to print detailed descriptions of command line arguments\n========================================================================")

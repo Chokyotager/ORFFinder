@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="orffinder",
-    version="1.7",
+    version="1.8",
     author="ChocoParrot",
     author_email="lachocoparrot@gmail.com",
     description="Open Reading Frame finder natively coded in Python.",

@@ -132,7 +132,7 @@ def getORFs (sequence, minimum_length=75, start_codons=["ATG"], stop_codons=["TA
             orf["start"] = sequence_length - orf["start"] + 2
 
             if orf["end"] == -1:
-                orf["end"] = 0
+                orf["end"] = 1
 
             else:
                 orf["end"] = sequence_length - orf["end"] + 2
