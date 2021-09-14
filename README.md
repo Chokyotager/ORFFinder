@@ -18,7 +18,7 @@ Finds the open reading frame (6-frame scan) on a given 5' to 3' nucleotide.
 `pip3 install orffinder`
 
 ### Terminal Usage
-Two command-line executable commands are available: `orffinder-to-gtf` `orffinder-to-sequence`.
+Three command-line executable commands are available: `orffinder-to-gtf` `orffinder-to-sequence` and `orffinder-to-gff3`.
 
 Documentation for these commands can be retrieved by specifying `<command> -h`.
 

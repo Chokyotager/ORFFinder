@@ -1,0 +1,35 @@
+USAGE
+  orffinder-to-gff3 [-in input] [-infmt format] [-out output] [-outfmt format] [-orf_size int]
+      [-remove_nested boolean] [-trim_trailing boolean] [-max_orfs_per_sequence int]
+      [-attr_name string]
+
+DESCRIPTION
+      ORFFinder Python v1.5
+
+PARAMETERS
+[-h]
+Shows this interface.
+
+[-in (string)]:
+Input nucleotide sequence to extract ORFs from.
+
+[-infmt (string)]:
+Can be "fasta", "genbank", or any other Biopython supported format. Default: "fasta"
+
+[-out (string)]
+Optional output file. If not specified, will output to stdout.
+
+[-orf_size (integer)]
+Minimum size (in nucleotides) of ORF. Default: 75
+
+[-remove_nested (boolean)]
+Remove ORFs that are completely nested in another ORF. Default: False
+
+[-trim_trailing (boolean)]
+Remove ORFs that have a start codon but no stop codon at the edges of the sequence. Default: False
+
+[-max_orfs_per_sequence (integer)]
+Maximum number of ORFs to return per sequence, sorted by length. Default: -1 (no limit)
+
+[-attr_name (string)]
+Attribute ID name in GTF file. Suffixed by ORF index number. Default: "ORF_"
