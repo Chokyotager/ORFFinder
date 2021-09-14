@@ -65,4 +65,4 @@ try:
         SeqIO.write(output, classed_arguments["out"], classed_arguments["outfmt"])
 
 except:
-    print("USAGE\n  orffinder-to-sequence [-in input] [-infmt format] [-out output] [-outfmt format] [-orf_size int]\n    [-remove_nested boolean] [-trim_trailing boolean] [-max_orfs_per_sequence int]\n    [-attr_name string] [-outtype protein/nucleotide]\n\nDESCRIPTION\n  ORFFinder Python v1.6\n\nUse '-help' to print detailed descriptions of command line arguments\n========================================================================")
+    print("USAGE\n  orffinder-to-sequence [-in input] [-infmt format] [-out output] [-outfmt format] [-orf_size int]\n    [-remove_nested boolean] [-trim_trailing boolean] [-max_orfs_per_sequence int]\n    [-attr_name string] [-outtype protein/nucleotide]\n\nDESCRIPTION\n  ORFFinder Python v1.7\n\nUse '-help' to print detailed descriptions of command line arguments\n========================================================================")

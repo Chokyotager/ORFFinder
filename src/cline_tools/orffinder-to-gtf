@@ -60,4 +60,4 @@ try:
         open(classed_arguments["out"], "w+").write(full_output)
 
 except:
-    print("USAGE\n  orffinder-to-gtf [-in input] [-infmt format] [-out output] [-orf_size int]\n    [-remove_nested boolean] [-trim_trailing boolean] [-max_orfs_per_sequence int]\n    [-attr_name string]\n\nDESCRIPTION\n  ORFFinder Python v1.6\n\nUse '-help' to print detailed descriptions of command line arguments\n========================================================================")
+    print("USAGE\n  orffinder-to-gtf [-in input] [-infmt format] [-out output] [-orf_size int]\n    [-remove_nested boolean] [-trim_trailing boolean] [-max_orfs_per_sequence int]\n    [-attr_name string]\n\nDESCRIPTION\n  ORFFinder Python v1.7\n\nUse '-help' to print detailed descriptions of command line arguments\n========================================================================")
