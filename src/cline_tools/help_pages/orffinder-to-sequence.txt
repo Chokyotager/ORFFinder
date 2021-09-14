@@ -4,7 +4,7 @@ USAGE
       [-attr_name string] [-outtype protein/nucleotide]
 
 DESCRIPTION
-      ORFFinder Python v1.5
+      ORFFinder Python v1.6
 
 PARAMETERS
 [-h]
