@@ -1,4 +1,3 @@
-from Bio import SeqIO
 from Bio.Seq import Seq
 
 def __reformSequence (sequence):
@@ -45,8 +44,8 @@ def getORFs (sequence, minimum_length=75, start_codons=["ATG"], stop_codons=["TA
     forward = str(sequence.seq).upper()
     reverse = str(sequence.reverse_complement().seq).upper()
 
-    forward_start, forward_stop = findSense(forward, "+")
-    reverse_start, reverse_stop = findSense(reverse, "-")
+    forward_start, forward_stop = findSense(forward, "+", start_codons=start_codons, stop_codons=stop_codons)
+    reverse_start, reverse_stop = findSense(reverse, "-", start_codons=start_codons, stop_codons=stop_codons)
 
     all_starts = forward_start + reverse_start
     all_stops = forward_stop + reverse_stop
@@ -212,10 +211,10 @@ def getORFProteins (sequence, translation_table=1, return_loci=False, **kwargs):
         difference = locus["length"] % 3
 
         if locus["sense"] == "+":
-            locus["protein"] = Seq(forward[locus["start"] - 1 : locus["end"] - 1 - difference]).translate()
+            locus["protein"] = Seq(forward[locus["start"] - 1 : locus["end"] - 1 - difference]).translate(table=translation_table)
 
         else:
-            locus["protein"] = Seq(reverse[sequence_length - locus["start"] + 1 : sequence_length - locus["end"] + 1  - difference]).translate()
+            locus["protein"] = Seq(reverse[sequence_length - locus["start"] + 1 : sequence_length - locus["end"] + 1  - difference]).translate(table=translation_table)
 
         proteins.append(locus["protein"])
 
